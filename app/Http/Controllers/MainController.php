@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -26,6 +27,19 @@ class MainController extends Controller
     }
     public function team(){
         return view('pages.team');
+    }
+
+
+
+    public function store(Request $request)
+    {
+        DB::table('order')->insert([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email
+        ]);
+
+        return back();
     }
     
 }

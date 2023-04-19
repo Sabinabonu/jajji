@@ -25,3 +25,4 @@ Route::get('/gallery', [MainController::class, 'gallery'])->name('gallery');
 Route::get('/team', [MainController::class, 'team'])->name('team');
 
 
+Route::post('/store', [MainController::class, 'store'])->name('store');
